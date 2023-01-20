@@ -5,7 +5,7 @@ function App() {
   const [ip, setIp] = useState("");
   useEffect(() => {
     async function getIp() {
-      const resp = await axios.get("http://localhost:3080/api/");
+      const resp = await axios.get(`${process.env.REACT_APP_URL || ""}/api/`);
       console.log(resp.data);
       setIp(resp.data);
     }
